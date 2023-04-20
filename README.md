@@ -1,4 +1,4 @@
-##  🏗️
+##  🏗️ Balanceamento de Carga
 Balanceamento de Carga
 Este é um programa Java simples que implementa um algoritmo de balanceamento de carga para tarefas em um sistema multicore.
 O programa utiliza uma matriz de nodos, onde cada nodo representa um processador e contém um número fixo de tarefas que podem ser executadas simultaneamente.
