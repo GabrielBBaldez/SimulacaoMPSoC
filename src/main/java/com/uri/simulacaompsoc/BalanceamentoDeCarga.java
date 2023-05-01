@@ -12,7 +12,7 @@ public class BalanceamentoDeCarga {
         boolean isMatrizTamanhoValido = false; // Não pode ser maior que 12x12
         boolean isNumeroTaskValido = false; // Não pode ser menor que 0
         boolean continuar = true;
-        List<Nodo> nodoList = new ArrayList<>();
+        List<NodoObsoleto> nodoObsoletoList = new ArrayList<>();
         int xMatriz = 0;
         int yMatriz = 0;
 
@@ -48,8 +48,8 @@ public class BalanceamentoDeCarga {
         // Cria Nodos (começando em 1, ignorando 0x0)
         for (int y = 0; y < yMatriz; y++) {
             for (int x = 0; x < xMatriz; x++) {
-                Nodo nodo = new Nodo(x, y, taskPorNodo);
-                nodoList.add(nodo);
+                NodoObsoleto nodoObsoleto = new NodoObsoleto(x, y, taskPorNodo);
+                nodoObsoletoList.add(nodoObsoleto);
             }
         }
 
@@ -67,21 +67,21 @@ public class BalanceamentoDeCarga {
                 if(posicaoAtual == 0){
                     posicaoAtual = 1;
                 }
-                Nodo nodo = nodoList.get(posicaoAtual);
+                NodoObsoleto nodoObsoleto = nodoObsoletoList.get(posicaoAtual);
 
-                if (nodo.getTaksOcupadas() >= taskPorNodo) {
+                if (nodoObsoleto.getTaksOcupadas() >= taskPorNodo) {
                     System.out.println("Número máximo de tarefas atingido");
                     continuar = false;
                     break;
                 }
 
-                nodo.setTaksOcupadas(nodo.getTaksOcupadas() + 1);
+                nodoObsoleto.setTaksOcupadas(nodoObsoleto.getTaksOcupadas() + 1);
             }
             // Imprime a matriz atualizada
             for (int y = 0; y < yMatriz; y++) {
                 for (int x = 0; x < xMatriz; x++) {
-                    Nodo nodo = nodoList.get(y * xMatriz + x);
-                    System.out.print(nodo.getTaksOcupadas() + " ");
+                    NodoObsoleto nodoObsoleto = nodoObsoletoList.get(y * xMatriz + x);
+                    System.out.print(nodoObsoleto.getTaksOcupadas() + " ");
                 }
                 System.out.println();
             }
