@@ -1,5 +1,8 @@
 package TrabalhoPart2;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Nodo {
 
     int x;
@@ -8,6 +11,7 @@ public class Nodo {
     int taksOcupadas;
     int pacotes;
     String nome;
+    List<String> appList = new ArrayList<>();
 
     public Nodo(int x, int y, int numeroTask, String nome) {
         this.x = x;
@@ -63,5 +67,13 @@ public class Nodo {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public List<String> getAppList() {
+        return appList;
+    }
+
+    public void setAppList(List<String> appList) {
+        this.appList = appList;
     }
 }

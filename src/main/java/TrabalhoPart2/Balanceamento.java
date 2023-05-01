@@ -73,22 +73,41 @@ public class Balanceamento {
                         }
 
                         nodo.setTaksOcupadas(nodo.taksOcupadas + 1);
-                        nodo.setNome(tests.getApp());
+                        nodo.appList.add(tests.getApp());
                         nodo.setPacotes(nodo.getPacotes() + tarefas.getQuantidadePacotes());
 
                     }
 
             }
         }
+        String linhaSeparadora = "+---------------------";
+        String linhaCelula = "| ";
+        String linhaFinal = "\n";
 
-        // Imprime a matriz atualizada
+// Imprime a primeira linha da matriz
+        System.out.print(linhaSeparadora.repeat(configuracao.getMpSoCSizeX()) + "+\n");
+
+// Imprime as células da matriz
         for (int y = 0; y < configuracao.getMpSoCSizeY(); y++) {
             for (int x = 0; x < configuracao.getMpSoCSizeX(); x++) {
                 Nodo nodo = nodoList.get(y * configuracao.getMpSoCSizeX() + x);
-                System.out.print(nodo.getNome() + "/" + nodo.getPacotes() + "/" + nodo.getTaksOcupadas() + " ");
+                List<String> apps = nodo.getAppList();
+                String appsStr = String.join(", ", apps);
+                String cellValue = nodo.getTaksOcupadas() + "/" + appsStr;
+                System.out.print(linhaCelula);
+                System.out.printf("%-20s", cellValue);
             }
-            System.out.println();
+            System.out.print(linhaCelula);
+            System.out.print(linhaFinal);
+            if (y < configuracao.getMpSoCSizeY() - 1) {
+                System.out.print(linhaSeparadora.repeat(configuracao.getMpSoCSizeX()) + "+\n");
+            }
         }
+
+// Imprime a última linha da matriz
+        System.out.print(linhaSeparadora.repeat(configuracao.getMpSoCSizeX()) + "+\n");
+
+
     }
 
     public static String getEnderecoJsonTest(String test) {
