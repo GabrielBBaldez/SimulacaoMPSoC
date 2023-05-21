@@ -14,6 +14,6 @@ Em seguida, o programa solicita ao usuário um número de tarefas a serem distri
 O usuário pode repetir esse processo quantas vezes quiser, até que seja inserido um número negativo.
 
 ## Divisão
-Esta trabalho foi divido em duas partes, sendo ela a primeira tentativa e depois de uma revisão com o professor uma nova versão foi implementada, mas para não perder as utilidades a primeira versão for perservada
+Esta trabalho foi divido em duas partes, sendo ela a primeira tentativa e depois de uma revisão com o professor uma nova versão foi implementada, mas para não perder as utilidades a primeira versão foi perservada
 
 Até mais! :)
