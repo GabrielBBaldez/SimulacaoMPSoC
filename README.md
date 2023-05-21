@@ -12,3 +12,8 @@ O código fonte pode ser compilado e executado em qualquer ambiente de desenvolv
 O programa solicita ao usuário o tamanho da matriz de nodos (até 12x12) e o número de tarefas que cada processador pode executar simultaneamente.
 Em seguida, o programa solicita ao usuário um número de tarefas a serem distribuídas entre os processadores.
 O usuário pode repetir esse processo quantas vezes quiser, até que seja inserido um número negativo.
+
+## Divisão
+Esta trabalho foi divido em duas partes, sendo ela a primeira tentativa e depois de uma revisão com o professor uma nova versão foi implementada, mas para não perder as utilidades a primeira versão for perservada
+
+Até mais! :)
