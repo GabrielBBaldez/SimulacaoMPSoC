@@ -1,7 +1,6 @@
 package TrabalhoPart2;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.uri.simulacaompsoc.NodoObsoleto;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;

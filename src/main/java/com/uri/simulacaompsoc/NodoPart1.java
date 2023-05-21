@@ -1,13 +1,13 @@
 package com.uri.simulacaompsoc;
 
-public class NodoObsoleto {
+public class NodoPart1 {
 
     int x;
     int y;
     int numeroTask;
     int taksOcupadas;
 
-    public NodoObsoleto(int x, int y, int numeroTask) {
+    public NodoPart1(int x, int y, int numeroTask) {
         this.x = x;
         this.y = y;
         this.numeroTask = numeroTask;

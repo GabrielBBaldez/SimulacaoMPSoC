@@ -12,7 +12,7 @@ public class BalanceamentoDeCarga {
         boolean isMatrizTamanhoValido = false; // Não pode ser maior que 12x12
         boolean isNumeroTaskValido = false; // Não pode ser menor que 0
         boolean continuar = true;
-        List<NodoObsoleto> nodoObsoletoList = new ArrayList<>();
+        List<NodoPart1> nodoPart1List = new ArrayList<>();
         int xMatriz = 0;
         int yMatriz = 0;
 
@@ -48,8 +48,8 @@ public class BalanceamentoDeCarga {
         // Cria Nodos (começando em 1, ignorando 0x0)
         for (int y = 0; y < yMatriz; y++) {
             for (int x = 0; x < xMatriz; x++) {
-                NodoObsoleto nodoObsoleto = new NodoObsoleto(x, y, taskPorNodo);
-                nodoObsoletoList.add(nodoObsoleto);
+                NodoPart1 nodoPart1 = new NodoPart1(x, y, taskPorNodo);
+                nodoPart1List.add(nodoPart1);
             }
         }
 
@@ -67,21 +67,21 @@ public class BalanceamentoDeCarga {
                 if(posicaoAtual == 0){
                     posicaoAtual = 1;
                 }
-                NodoObsoleto nodoObsoleto = nodoObsoletoList.get(posicaoAtual);
+                NodoPart1 nodoPart1 = nodoPart1List.get(posicaoAtual);
 
-                if (nodoObsoleto.getTaksOcupadas() >= taskPorNodo) {
+                if (nodoPart1.getTaksOcupadas() >= taskPorNodo) {
                     System.out.println("Número máximo de tarefas atingido");
                     continuar = false;
                     break;
                 }
 
-                nodoObsoleto.setTaksOcupadas(nodoObsoleto.getTaksOcupadas() + 1);
+                nodoPart1.setTaksOcupadas(nodoPart1.getTaksOcupadas() + 1);
             }
             // Imprime a matriz atualizada
             for (int y = 0; y < yMatriz; y++) {
                 for (int x = 0; x < xMatriz; x++) {
-                    NodoObsoleto nodoObsoleto = nodoObsoletoList.get(y * xMatriz + x);
-                    System.out.print(nodoObsoleto.getTaksOcupadas() + " ");
+                    NodoPart1 nodoPart1 = nodoPart1List.get(y * xMatriz + x);
+                    System.out.print(nodoPart1.getTaksOcupadas() + " ");
                 }
                 System.out.println();
             }
